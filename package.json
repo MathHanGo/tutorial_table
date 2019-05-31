@@ -1,0 +1,22 @@
+{
+  "name": "leader_board",
+  "private": true,
+  "scripts": {
+    "start": "set MONGO_URL=mongodb+srv://hanjunyan_doi:jIV6c7F1lCA6S0Yh0@doi-v8ejd.mongodb.net/test?retryWrites=true&&meteor run",
+    "test": "meteor test --once --driver-package meteortesting:mocha",
+    "test-app": "TEST_WATCH=1 meteor test --full-app --driver-package meteortesting:mocha",
+    "visualize": "meteor --production --extra-packages bundle-visualizer"
+  },
+  "dependencies": {
+    "@babel/runtime": "^7.3.4",
+    "meteor-node-stubs": "^0.4.1",
+    "mongodb": "^3.2.5"
+  },
+  "meteor": {
+    "mainModule": {
+      "client": "client/main.js",
+      "server": "server/main.js"
+    },
+    "testModule": "tests/main.js"
+  }
+}
