@@ -14,13 +14,13 @@ Template.leaderboard.onCreated(function created(){
 });
 Template.leaderboard.helpers({
     selectors: function () {
-        var selector = Session.get('selector');
-        if(selector!=undefined) {
-            return Records.find();
+        // var selector = Session.get('selector');
+        // if(selector!=undefined) {
+        return Records.find();
 
-        }else{
-            return Records.find({"report_date":"31/05/2019"});
-        }
+        // }else{
+        //     return Records.find({"report_date":"31/05/2019"});
+        // }
     },
 
 

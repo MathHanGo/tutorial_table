@@ -15,13 +15,15 @@ Meteor.publish('query_name', function(selector){
     const self = this;
 
     if(selector == undefined){
-        return;
+        var date = {'report_date':'31/05/2019'};
+    }else{
+        var date = selector;
     }
 
     MongoClient.connect(uri, {useNewUrlParser: true}, function (err, client) {
         if (err) throw err;
         var db = client.db(dbName);
-        db.collection("doi_records").find(selector).toArray(function (err, result) {
+        db.collection("doi_records").find(date).toArray(function (err, result) {
             if (err) throw err;
             for (i = 0; i < result.length; i++) {
                 self.added('records', result[i]['serial_number'], result[i]);
