@@ -9,13 +9,25 @@ const Records = new Meteor.Collection('records');
 // Tracker.autorun(() => {
     // Meteor.subscribe('query_name');
 // });
-
+Template.leaderboard.onCreated(function created(){
+    // var selector = Session.get('selector');
+    this.autorun(()=>{
+        Meteor.subscribe('query_name', Session.get('selector'));
+    })
+});
 Template.leaderboard.helpers({
     selectors: function () {
+        // Records._collection.remove({});
         var selector = Session.get('selector');
-        Meteor.subscribe('query_name', args=selector);
-        // return Records.find(selector);
-        return Records.find();
+        console.log(selector);
+        if(selector!=undefined) {
+            console.log('hehhehe')
+            return Records.find();
+
+        }else{
+            console.log('xixixiix')
+            return Records.find({"report_date":"31/05/2019"});
+        }
     },
 
 
