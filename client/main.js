@@ -34,10 +34,10 @@ Template.leaderboard.helpers({
                 { key: 'director_name', label: 'Director Name'},//, fn: function (director_name) { return director_name}}
                 { key: 'position', label:'Director Position'},
                 { key: 'shares_in_event', label: 'Shares Number'},
-                { key: 'changes_after_event', label: 'Changes (After Event)'},
-                // { key: 'changes_1month', label: 'Changes (1month)'},
+                { key: 'changes_event_string', label: 'Changes (After Event)'},
+                { key: 'changes_1month_string', label: 'Changes (1month)'},
                 { key: 'avg_px', label: 'Average Price'},
-                { key: 'event_date', label: 'Event Date'},
+                { key: 'event_date_string', label: 'Event Date'},
                 { key: 'serial_number', label: 'Serial Number',  fn: function (serial_number,object) {
                         return new Spacebars.SafeString("<a href="+object['serial_link']+">"+serial_number+"</a>");
                     }}
