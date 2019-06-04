@@ -15,7 +15,8 @@ Meteor.publish('query_name', function(selector){
     const self = this;
 
     if(selector == undefined){
-        var date = {'report_date':'31/05/2019'};
+        var today = new Date()
+        var date = {'report_date':[today.getDate(), today.getMonth(), today.getFullYear()].join('/')};
     }else{
         var date = selector;
     }
